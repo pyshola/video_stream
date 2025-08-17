@@ -79,8 +79,8 @@ UserSchema.set("toJSON",{
     versionKey:false,
     transform:function(doc, ret){
         ret.id = ret._id.toString();
-        // delete ret?._id;
-        // delete ret?.hash;
+        delete ret?._id;
+        delete ret?.hash;
     }
 
 });
