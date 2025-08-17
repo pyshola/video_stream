@@ -1,0 +1,5 @@
+export enum INotificationKind{
+    COMMENT="COMMENT",
+    SUBSCRIPTION="SUBSCRIPTION",
+    REACTION="REACTION",
+}

@@ -1,11 +1,11 @@
 import mongoose, {Schema, Document, Types} from "mongoose";
 
-export interface IBookmark extends Document{
+export interface IVideoHistory extends Document{
     user:Types.ObjectId;
     video:Types.ObjectId;
 }
 
-const BookmarkSchema = new Schema<IBookmark>(
+const VideoHistorySchema = new Schema<IVideoHistory>(
     {
         user:{type:mongoose.Schema.Types.ObjectId, ref:"User", required:true},
         video:{type:mongoose.Schema.Types.ObjectId, ref:"Video", required:true}
@@ -13,4 +13,4 @@ const BookmarkSchema = new Schema<IBookmark>(
     {timestamps:true}
 )
 
-export default mongoose.models?.Bookmark || mongoose.model<IBookmark>("Bookmark", BookmarkSchema);
+export default mongoose.models?.VideoHistory || mongoose.model<IVideoHistory>("VideoHistory", VideoHistorySchema);

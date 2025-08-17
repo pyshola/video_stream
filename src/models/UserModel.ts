@@ -3,15 +3,15 @@ import VideoModel from "./VideoModel";
 import SubscriptionModel from "./SubscriptionModel"
 
 export interface IUser extends Document{
-    _id:String;
-    name:String;
-    email:String;
-    password:String;
-    phone:String;
-    username:String;
-    bio:String;
-    image:String;
-    banner:String;
+    _id:string;
+    name:string;
+    email:string;
+    password:string;
+    phone:string;
+    username:string;
+    bio:string;
+    image:string;
+    banner:string;
     createdAt:Date;
     updatedAt:Date;
     video:Types.ObjectId[];
@@ -58,14 +58,14 @@ const UserSchema = new Schema<IUser>(
 )
 
 //method to get total user video
-UserSchema.methods.getTotalVideos = async function(id:String){
+UserSchema.methods.getTotalVideos = async function(id:string){
     return await VideoModel.countDocuments({user:id})
 }
 
 //method to get total user subscription
 
-UserSchema.methods.getTotalSubscription = async function(id:String){
-    return await SubscriptionModel.countDocument({user:id})
+UserSchema.methods.getTotalSubscription = async function(id:string){
+    return await SubscriptionModel.countDocuments({user:id})
 }
 
 UserSchema.virtual("videos", {
